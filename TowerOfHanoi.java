@@ -3,7 +3,7 @@ import java.io.*;
 import java.math.*;
 public class TowerOfHanoi {
         static void towerOfHanoi(int n, char from_rod,
-                                 char to_rod, char aux_rod)
+                                 char to_rod, char mid_rod) //
         {
             if (n == 1)
             {
@@ -11,13 +11,13 @@ public class TowerOfHanoi {
                         from_rod+" to rod "+to_rod);
                 return;
             }
-            towerOfHanoi(n - 1, from_rod, aux_rod, to_rod);
+            towerOfHanoi(n - 1, from_rod, mid_rod, to_rod);
             System.out.println("Move disk "+ n + " from rod " +
                     from_rod +" to rod " + to_rod );
-            towerOfHanoi(n - 1, aux_rod, to_rod, from_rod);
+            towerOfHanoi(n - 1, mid_rod, to_rod, from_rod);
         }
 
-        // Driver code
+        
         public static void  main(String args[])
         {
             int n = 3; // Number of disks
